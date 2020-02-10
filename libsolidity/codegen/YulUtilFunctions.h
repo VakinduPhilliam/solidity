@@ -297,6 +297,11 @@ public:
 	static std::string revertReasonIfDebug(RevertStrings revertStrings, std::string const& _message = "");
 
 	std::string revertReasonIfDebug(std::string const& _message = "");
+
+	/// Constructs an array and copies the returndata to it, or pushes a zero-array pointer
+	/// on platforms that do not support returndata (<byzantium).
+	std::string returnDataToArrayFunction();
+
 private:
 	/// Special case of conversionFunction - handles everything that does not
 	/// use exactly one variable to hold the value.
